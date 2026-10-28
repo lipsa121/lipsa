@@ -1,0 +1,6 @@
+{
+  "name": "LoadPilot AI — Predictive Smart Load Management System",
+  "description": "An intelligent load management platform that forecasts electricity demand and recommends smarter scheduling of flexible electrical loads before peak demand becomes a problem.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
