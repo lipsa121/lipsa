@@ -267,20 +267,20 @@ export const ForecastingView: React.FC = () => {
           {/* Chart Legend */}
           <div className="flex flex-wrap items-center gap-3 text-xs font-mono">
             <div className="flex items-center gap-1.5">
-              <span className="w-3 h-0.5 bg-[#2ECC71]" />
-              <span className="text-slate-300">Predicted Load</span>
+              <span className="w-3 h-0.5 bg-[#10B981]" />
+              <span className="text-emerald-300 font-semibold">Predicted Load</span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-3 h-0.5 bg-slate-400 stroke-dasharray" />
               <span className="text-slate-400">Reference Actual</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="w-3 h-0.5 bg-amber-400" />
-              <span className="text-amber-300">Solar Gen</span>
+              <span className="w-3 h-0.5 bg-[#34D399] stroke-dasharray" />
+              <span className="text-[#34D399]">Solar Gen</span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-3 h-0.5 bg-[#E11D48]" />
-              <span className="text-[#FB7185]">Capacity Limit</span>
+              <span className="text-[#FB7185] font-semibold">Capacity Limit</span>
             </div>
           </div>
         </div>
@@ -294,14 +294,14 @@ export const ForecastingView: React.FC = () => {
             <defs>
               {/* Confidence Band Gradient */}
               <linearGradient id="confidenceGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#2ECC71" stopOpacity="0.22" />
-                <stop offset="100%" stopColor="#2ECC71" stopOpacity="0.04" />
+                <stop offset="0%" stopColor="#10B981" stopOpacity="0.22" />
+                <stop offset="100%" stopColor="#10B981" stopOpacity="0.04" />
               </linearGradient>
 
-              {/* Solar Gradient */}
+              {/* Solar Gradient in Emerald Green */}
               <linearGradient id="solarGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.0" />
+                <stop offset="0%" stopColor="#10B981" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#10B981" stopOpacity="0.0" />
               </linearGradient>
             </defs>
 
@@ -362,7 +362,7 @@ export const ForecastingView: React.FC = () => {
             <path 
               d={solarPath} 
               fill="none" 
-              stroke="#F59E0B" 
+              stroke="#10B981" 
               strokeWidth="1.5" 
               strokeDasharray="4 2" 
             />

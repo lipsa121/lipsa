@@ -60,17 +60,17 @@ export const EnergyFlowView: React.FC = () => {
         <div className="max-w-4xl mx-auto relative z-10">
           {/* Top Node: Solar Generation */}
           <div className="flex justify-center mb-8">
-            <div className="w-64 rounded-xl border border-amber-500/40 bg-[#161B22] p-4 text-center shadow-lg shadow-amber-950/20 relative group">
-              <div className="w-10 h-10 rounded-lg bg-amber-950/60 border border-amber-500/40 text-amber-300 mx-auto flex items-center justify-center mb-2">
+            <div className="w-64 rounded-xl border border-[#10B981]/50 bg-[#0E1612] p-4 text-center shadow-lg shadow-emerald-950/20 relative group">
+              <div className="w-10 h-10 rounded-lg bg-[#122A1E] border border-[#10B981]/40 text-[#10B981] mx-auto flex items-center justify-center mb-2">
                 <Sun className="w-5 h-5" />
               </div>
               <div className="text-xs font-bold text-white uppercase tracking-wider">
                 Rooftop Solar PV
               </div>
-              <div className="text-xl font-mono font-bold text-amber-300 mt-1 tabular-nums">
+              <div className="text-xl font-mono font-bold text-[#10B981] mt-1 tabular-nums">
                 {solarW} W
               </div>
-              <div className="text-[10px] font-mono text-slate-400 mt-0.5">
+              <div className="text-[10px] font-mono text-emerald-300/80 mt-0.5">
                 {(solarW / 1000).toFixed(2)} kW Generated
               </div>
             </div>
@@ -79,13 +79,13 @@ export const EnergyFlowView: React.FC = () => {
           {/* Vertical Conduit: Solar down to Central Bus */}
           <div className="flex justify-center -my-3">
             <div className="flex flex-col items-center">
-              <div className="w-0.5 h-10 bg-amber-400/60 relative overflow-hidden">
-                <div className="w-full h-1/2 bg-amber-300 animate-pulse" />
+              <div className="w-0.5 h-10 bg-[#10B981]/60 relative overflow-hidden">
+                <div className="w-full h-1/2 bg-[#10B981] animate-pulse" />
               </div>
-              <div className="text-[10px] font-mono text-amber-400 bg-[#0E1115] px-2 py-0.5 rounded border border-amber-500/20 my-1">
+              <div className="text-[10px] font-mono text-[#10B981] bg-[#07090C] px-2 py-0.5 rounded border border-[#10B981]/30 my-1">
                 ↓ {solarW} W
               </div>
-              <div className="w-0.5 h-10 bg-amber-400/60" />
+              <div className="w-0.5 h-10 bg-[#10B981]/60" />
             </div>
           </div>
 

@@ -159,21 +159,21 @@ export const SmartHomeBuilderView: React.FC<SmartHomeBuilderViewProps> = ({
           <div className="rounded-xl border border-[#252B35] bg-[#14181F]/90 p-4 backdrop-blur-md shadow-lg">
             <div className="flex items-center justify-between text-xs text-slate-400">
               <span>Rooftop Solar Array</span>
-              <Sun className="w-3.5 h-3.5 text-amber-400" />
+              <Sun className="w-3.5 h-3.5 text-[#10B981]" />
             </div>
-            <div className="mt-2 text-xl font-mono font-bold text-amber-300 tabular-nums">
+            <div className="mt-2 text-xl font-mono font-bold text-[#10B981] tabular-nums">
               {metrics.solarGenerationW} <span className="text-xs font-normal text-slate-400">W</span>
             </div>
-            <div className="text-[11px] font-mono text-amber-400/80 mt-1">
+            <div className="text-[11px] font-mono text-emerald-300 mt-1">
               {state.solar.installedCapacityKW} kWp · {state.sunIrradiancePct}% Sun
             </div>
           </div>
 
           {/* 3. Inverter Throughput */}
-          <div className="rounded-xl border border-[#252B35] bg-[#14181F]/90 p-4 backdrop-blur-md shadow-lg">
+          <div className="rounded-2xl border border-[#18202A] bg-[#0D1117] p-4 backdrop-blur-xl shadow-lg">
             <div className="flex items-center justify-between text-xs text-slate-400">
               <span>Inverter Throughput</span>
-              <Cpu className="w-3.5 h-3.5 text-cyan-400" />
+              <Cpu className="w-3.5 h-3.5 text-[#10B981]" />
             </div>
             <div className="mt-2 text-xl font-mono font-bold text-white tabular-nums">
               {metrics.inverterLoadW} <span className="text-xs font-normal text-slate-400">W</span>
@@ -184,10 +184,10 @@ export const SmartHomeBuilderView: React.FC<SmartHomeBuilderViewProps> = ({
           </div>
 
           {/* 4. Battery Storage */}
-          <div className="rounded-xl border border-[#252B35] bg-[#14181F]/90 p-4 backdrop-blur-md shadow-lg">
+          <div className="rounded-2xl border border-[#18202A] bg-[#0D1117] p-4 backdrop-blur-xl shadow-lg">
             <div className="flex items-center justify-between text-xs text-slate-400">
               <span>BESS Battery Unit</span>
-              <Battery className="w-3.5 h-3.5 text-[#2ECC71]" />
+              <Battery className="w-3.5 h-3.5 text-[#10B981]" />
             </div>
             <div className="mt-2 text-xl font-mono font-bold text-white tabular-nums">
               {state.battery.stateOfChargePct}% <span className="text-xs font-normal text-slate-400">SoC</span>
@@ -198,16 +198,16 @@ export const SmartHomeBuilderView: React.FC<SmartHomeBuilderViewProps> = ({
           </div>
 
           {/* 5. Grid Exchange / Microgrid Status */}
-          <div className="col-span-2 md:col-span-1 rounded-xl border border-[#252B35] bg-[#14181F]/90 p-4 backdrop-blur-md shadow-lg">
+          <div className="col-span-2 md:col-span-1 rounded-2xl border border-[#18202A] bg-[#0D1117] p-4 backdrop-blur-xl shadow-lg">
             <div className="flex items-center justify-between text-xs text-slate-400">
               <span>Grid Balance</span>
-              <Zap className="w-3.5 h-3.5 text-purple-400" />
+              <Zap className="w-3.5 h-3.5 text-[#10B981]" />
             </div>
             <div className={`mt-2 text-xl font-mono font-bold tabular-nums ${
               metrics.isIslanded 
-                ? 'text-amber-300' 
+                ? 'text-[#FB7185]' 
                 : metrics.gridExportW > 0 
-                ? 'text-[#2ECC71]' 
+                ? 'text-[#10B981]' 
                 : 'text-[#FB7185]'
             }`}>
               {metrics.isIslanded ? 'Islanded' : metrics.gridExportW > 0 ? `+${metrics.gridExportW} W` : `-${metrics.gridImportW} W`}

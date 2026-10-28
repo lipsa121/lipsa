@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLaunchModal, onLaunchDashb
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? 'bg-[#101317]/95 backdrop-blur-md border-b border-[#222731] shadow-xl shadow-black/40'
+          ? 'bg-[#07090C]/95 backdrop-blur-md border-b border-[#18202A] shadow-xl shadow-black/60'
           : 'bg-transparent border-b border-transparent'
       }`}
     >
@@ -38,14 +38,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLaunchModal, onLaunchDashb
           {/* Zone 1: Brand Wordmark & Simple Electrical Logo */}
           <a
             href="#"
-            className="flex items-center gap-3 text-white font-semibold text-lg tracking-tight whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2D936C] rounded"
+            className="flex items-center gap-3 text-white font-semibold text-lg tracking-tight whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] rounded"
           >
-            <div className="w-8 h-8 rounded bg-[#161B22] border border-[#26303D] flex items-center justify-center relative">
-              <Zap className="w-4 h-4 text-[#2ECC71] fill-[#1B5E3F]/40" />
-              <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-[#E11D48]" />
+            <div className="w-8 h-8 rounded-lg bg-[#0D1117] border border-[#1F2733] flex items-center justify-center relative shadow-sm">
+              <Zap className="w-4 h-4 text-[#10B981] fill-[#10B981]/20" />
+              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#E11D48] ring-2 ring-[#07090C]" />
             </div>
-            <span className="text-slate-100 font-bold tracking-tight">
-              LoadPilot <span className="text-[#2ECC71] font-semibold">AI</span>
+            <span className="text-white font-bold tracking-tight">
+              LoadPilot <span className="text-[#10B981] font-semibold">AI</span>
             </span>
           </a>
 
@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLaunchModal, onLaunchDashb
               <a
                 key={link.name}
                 href={link.href}
-                className="whitespace-nowrap shrink-0 hover:text-[#2ECC71] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2D936C] rounded px-1"
+                className="whitespace-nowrap shrink-0 hover:text-[#10B981] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] rounded px-1"
               >
                 {link.name}
               </a>
@@ -66,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenLaunchModal, onLaunchDashb
           <div className="hidden md:flex items-center gap-4 shrink-0">
             <button
               onClick={onLaunchDashboard || onOpenLaunchModal}
-              className="px-4 py-2 text-xs font-semibold text-white bg-[#1B5E3F] hover:bg-[#23754F] active:bg-[#154C32] border border-[#2D936C]/40 rounded-md transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 shadow-sm hover:shadow-[0_0_20px_rgba(39,174,96,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2ECC71] focus-visible:ring-offset-2 focus-visible:ring-offset-[#101317]"
+              className="px-4 py-2 text-xs font-semibold text-white bg-[#059669] hover:bg-[#10B981] active:bg-[#047857] border border-[#10B981]/40 rounded-lg transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 shadow-sm hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] focus-visible:ring-offset-2 focus-visible:ring-offset-[#07090C]"
             >
               <span>Launch Dashboard</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-emerald-200" />

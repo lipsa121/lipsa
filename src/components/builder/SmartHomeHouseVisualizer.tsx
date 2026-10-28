@@ -116,30 +116,30 @@ export const SmartHomeHouseVisualizer: React.FC<SmartHomeHouseVisualizerProps> =
           <div className="hidden md:flex items-center space-x-1">
             <button
               onClick={() => setTimeOfDayHour(8)}
-              className={`px-2 py-1 text-[11px] font-mono rounded border transition-colors ${
+              className={`px-2 py-1 text-[11px] font-mono rounded-lg border transition-colors ${
                 state.timeOfDayHour === 8 
-                  ? 'bg-[#1B5E3F]/30 border-[#2ECC71] text-[#2ECC71]' 
-                  : 'bg-[#161B22] border-[#232931] text-[#A1A1AA] hover:text-white'
+                  ? 'bg-[#0D2419] border-[#10B981] text-[#10B981]' 
+                  : 'bg-[#0D1117] border-[#18202A] text-slate-400 hover:text-white'
               }`}
             >
               Morning (8h)
             </button>
             <button
               onClick={() => setTimeOfDayHour(13)}
-              className={`px-2 py-1 text-[11px] font-mono rounded border transition-colors ${
+              className={`px-2 py-1 text-[11px] font-mono rounded-lg border transition-colors ${
                 state.timeOfDayHour === 13 
-                  ? 'bg-amber-500/20 border-amber-500 text-amber-400' 
-                  : 'bg-[#161B22] border-[#232931] text-[#A1A1AA] hover:text-white'
+                  ? 'bg-[#0D2419] border-[#10B981] text-[#10B981]' 
+                  : 'bg-[#0D1117] border-[#18202A] text-slate-400 hover:text-white'
               }`}
             >
               Peak Sun (13h)
             </button>
             <button
               onClick={() => setTimeOfDayHour(20)}
-              className={`px-2 py-1 text-[11px] font-mono rounded border transition-colors ${
+              className={`px-2 py-1 text-[11px] font-mono rounded-lg border transition-colors ${
                 state.timeOfDayHour === 20 
-                  ? 'bg-indigo-500/20 border-indigo-500 text-indigo-300' 
-                  : 'bg-[#161B22] border-[#232931] text-[#A1A1AA] hover:text-white'
+                  ? 'bg-[#2D0D14] border-[#BE123C]/60 text-[#FB7185]' 
+                  : 'bg-[#0D1117] border-[#18202A] text-slate-400 hover:text-white'
               }`}
             >
               Evening (20h)

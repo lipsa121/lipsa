@@ -62,30 +62,30 @@ export const ApplianceCard: React.FC<ApplianceCardProps> = ({ appliance, compact
   const getPriorityBadgeClass = (priority: string) => {
     switch (priority) {
       case 'Critical':
-        return 'text-[#FB7185] bg-[#3B0C15] border-[#BE123C]/40';
+        return 'text-[#FB7185] bg-[#3B0C15] border-[#BE123C]/50 font-bold';
       case 'High':
-        return 'text-amber-300 bg-amber-950/60 border-amber-500/30';
+        return 'text-[#FDA4AF] bg-[#2D0D14] border-[#BE123C]/35 font-semibold';
       case 'Medium':
-        return 'text-sky-300 bg-sky-950/60 border-sky-500/30';
+        return 'text-[#10B981] bg-[#0D2419] border-[#10B981]/30 font-medium';
       case 'Low':
-        return 'text-slate-300 bg-slate-800/80 border-slate-700/40';
+        return 'text-slate-300 bg-[#141B24] border-[#222E3E]';
       case 'Deferrable':
-        return 'text-[#2ECC71] bg-[#16291F] border-[#2D936C]/40';
+        return 'text-[#34D399] bg-[#0B2016] border-[#10B981]/40 font-semibold';
       default:
-        return 'text-slate-300 bg-slate-800 border-white/5';
+        return 'text-slate-300 bg-[#12161F] border-[#1F2733]';
     }
   };
 
   const getFlexibilityBadgeClass = (flex: string) => {
     switch (flex) {
       case 'Flexible':
-        return 'text-[#2ECC71] border-[#2D936C]/40 bg-[#16291F]/60';
+        return 'text-[#10B981] border-[#10B981]/40 bg-[#0D2419]';
       case 'Semi-Flexible':
-        return 'text-amber-300 border-amber-500/30 bg-amber-950/40';
+        return 'text-[#6EE7B7] border-[#059669]/40 bg-[#0A1A12]';
       case 'Non-Flexible':
-        return 'text-slate-400 border-slate-700/40 bg-slate-800/40';
+        return 'text-slate-400 border-[#202733] bg-[#12161F]';
       default:
-        return 'text-slate-400 border-white/5';
+        return 'text-slate-400 border-[#1F2733] bg-[#12161F]';
     }
   };
 

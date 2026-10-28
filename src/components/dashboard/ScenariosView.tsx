@@ -195,7 +195,7 @@ export const ScenariosView: React.FC = () => {
 
                   <div className="p-2.5 rounded-lg bg-[#0E0C0F] border border-[#2A1820]">
                     <span className="text-[10px] text-slate-400">Est. Daily Bill:</span>
-                    <div className="text-base font-bold text-amber-400 mt-0.5">
+                    <div className="text-base font-bold text-[#FB7185] mt-0.5">
                       ${selectedScenario.beforeOptimization.estimatedCostUSD.toFixed(2)}
                     </div>
                   </div>

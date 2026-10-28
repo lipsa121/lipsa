@@ -36,9 +36,9 @@ export const DashboardCharts: React.FC = () => {
   const totalActiveApplianceWatts = activeAppliances.reduce((sum, a) => sum + a.wattage, 0) || 1;
 
   return (
-    <div className="rounded-xl border border-[#252B35] bg-[#14181F]/90 p-5 sm:p-6 backdrop-blur-md shadow-xl">
+    <div className="rounded-2xl border border-[#18202A] bg-[#0D1117] p-5 sm:p-6 backdrop-blur-xl shadow-2xl">
       {/* Chart Header & Tab Navigation */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-[#252B35] gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 border-b border-[#18202A] gap-4">
         <div>
           <h3 className="text-sm font-bold text-white flex items-center gap-2">
             <span>Energy Telemetry & Analytical Charts</span>
@@ -190,23 +190,23 @@ export const DashboardCharts: React.FC = () => {
         <div className="pt-6 space-y-4">
           <div className="flex flex-wrap items-center justify-between text-xs gap-2">
             <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1.5 text-amber-300">
-                <span className="w-2.5 h-2.5 bg-amber-400 rounded-sm" /> Solar Generation ({solarGenW} W)
+              <span className="flex items-center gap-1.5 text-[#10B981]">
+                <span className="w-2.5 h-2.5 bg-[#10B981] rounded-sm" /> Solar Generation ({solarGenW} W)
               </span>
-              <span className="flex items-center gap-1.5 text-[#2ECC71]">
-                <span className="w-2.5 h-2.5 bg-[#2ECC71] rounded-sm" /> Household Demand ({currentLoadW} W)
+              <span className="flex items-center gap-1.5 text-slate-200">
+                <span className="w-2.5 h-2.5 bg-slate-400 rounded-sm" /> Household Demand ({currentLoadW} W)
               </span>
             </div>
             <div className="font-mono text-xs">
               {metrics.gridExportW > 0 ? (
-                <span className="text-[#2ECC71]">Solar Surplus: +{metrics.gridExportW} W (Exporting)</span>
+                <span className="text-[#10B981]">Solar Surplus: +{metrics.gridExportW} W (Exporting)</span>
               ) : (
                 <span className="text-[#FB7185]">Solar Shortfall: -{metrics.gridImportW} W (Importing)</span>
               )}
             </div>
           </div>
 
-          <div className="h-64 w-full bg-[#0E1115] rounded-lg border border-[#20252F] p-4 flex items-end justify-between gap-2 sm:gap-3">
+          <div className="h-64 w-full bg-[#07090C] rounded-xl border border-[#18202A] p-4 flex items-end justify-between gap-2 sm:gap-3">
             {hourlyPoints.map((pt, i) => {
               const maxH = 150; // px
               const loadBarH = Math.min(maxH, (pt.load / 4000) * maxH);
@@ -217,7 +217,7 @@ export const DashboardCharts: React.FC = () => {
                   <div className="w-full flex items-end justify-center gap-1 h-[150px]">
                     {/* Solar Bar */}
                     <div
-                      className="w-1/2 bg-amber-400/80 rounded-t-sm transition-all group-hover:bg-amber-300"
+                      className="w-1/2 bg-[#10B981] rounded-t-sm transition-all group-hover:bg-[#34D399]"
                       style={{ height: `${solarBarH}px` }}
                       title={`Solar: ${pt.solar} W`}
                     />
@@ -225,8 +225,8 @@ export const DashboardCharts: React.FC = () => {
                     <div
                       className={`w-1/2 rounded-t-sm transition-all ${
                         pt.isCurrent
-                          ? 'bg-[#2ECC71] group-hover:bg-[#A7F3D0]'
-                          : 'bg-[#1B5E3F] group-hover:bg-[#2ECC71]'
+                          ? 'bg-[#E11D48] group-hover:bg-[#F43F5E]'
+                          : 'bg-[#18202A] group-hover:bg-[#253040]'
                       }`}
                       style={{ height: `${loadBarH}px` }}
                       title={`Load: ${pt.load} W`}

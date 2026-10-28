@@ -32,23 +32,23 @@ export const MethodologyView: React.FC = () => {
       </div>
 
       {/* Prominent Educational Boundary Notice */}
-      <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-xs text-amber-200/90 flex items-start gap-3">
-        <ShieldAlert className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+      <div className="rounded-xl border border-[#BE123C]/50 bg-[#3B0C15]/70 p-4 text-xs text-rose-200/90 flex items-start gap-3">
+        <ShieldAlert className="w-5 h-5 text-[#FB7185] shrink-0 mt-0.5" />
         <div className="space-y-1">
-          <div className="font-bold text-amber-300 uppercase tracking-wide font-mono text-[11px]">
+          <div className="font-bold text-[#FB7185] uppercase tracking-wide font-mono text-[11px]">
             Academic Prototype Scope & Operational Boundaries
           </div>
-          <p className="leading-relaxed">
+          <p className="leading-relaxed text-slate-300">
             LoadPilot AI is designed and implemented as an electrical engineering undergraduate capstone prototype. The software executes deterministic discrete-time equations. It is not approved for direct electrical service breaker control or mission-critical hospital/life-support loads without certified hardware fail-safes (UL 1741 / IEEE 1547 compliant contactors).
           </p>
         </div>
       </div>
 
       {/* Section 1: Mathematical State Equations */}
-      <div className="rounded-2xl border border-[#252D3B] bg-[#12161E] p-5 sm:p-6 shadow-xl space-y-5">
+      <div className="rounded-2xl border border-[#18202A] bg-[#0D1117] p-5 sm:p-6 shadow-xl space-y-5">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-[#1B5E3F] text-emerald-200 flex items-center justify-center">
-            <Zap className="w-4 h-4 text-[#2ECC71]" />
+          <div className="w-8 h-8 rounded-lg bg-[#0D2419] border border-[#10B981]/40 text-[#10B981] flex items-center justify-center">
+            <Zap className="w-4 h-4 text-[#10B981]" />
           </div>
           <div>
             <h2 className="text-sm sm:text-base font-bold text-white tracking-tight">
@@ -62,11 +62,11 @@ export const MethodologyView: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
           {/* Formula 1: Energy Balance */}
-          <div className="p-4 rounded-xl bg-[#0B0E13] border border-[#1E2532] space-y-2">
-            <span className="text-[#2ECC71] font-bold text-[11px] uppercase">
+          <div className="p-4 rounded-xl bg-[#07090C] border border-[#18202A] space-y-2">
+            <span className="text-[#10B981] font-bold text-[11px] uppercase">
               Eq. 1 — Point of Common Coupling Power Equilibrium
             </span>
-            <div className="p-2.5 rounded bg-[#131922] border border-[#253040] text-emerald-300 overflow-x-auto">
+            <div className="p-2.5 rounded bg-[#0A0D12] border border-[#1C2634] text-emerald-300 overflow-x-auto">
               P_load + P_grid_exp + P_batt_chg = P_solar_AC + P_grid_imp + P_batt_dis
             </div>
             <p className="text-slate-400 text-[11px] leading-relaxed">
@@ -75,11 +75,11 @@ export const MethodologyView: React.FC = () => {
           </div>
 
           {/* Formula 2: Inverter DC/AC Model */}
-          <div className="p-4 rounded-xl bg-[#0B0E13] border border-[#1E2532] space-y-2">
-            <span className="text-[#2ECC71] font-bold text-[11px] uppercase">
+          <div className="p-4 rounded-xl bg-[#07090C] border border-[#18202A] space-y-2">
+            <span className="text-[#10B981] font-bold text-[11px] uppercase">
               Eq. 2 — Inverter Efficiency & Conversion Loss
             </span>
-            <div className="p-2.5 rounded bg-[#131922] border border-[#253040] text-cyan-300 overflow-x-auto">
+            <div className="p-2.5 rounded bg-[#0A0D12] border border-[#1C2634] text-[#10B981] overflow-x-auto">
               P_solar_AC = min(P_inv_rated, P_solar_DC · η_inv)
             </div>
             <p className="text-slate-400 text-[11px] leading-relaxed">
@@ -88,11 +88,11 @@ export const MethodologyView: React.FC = () => {
           </div>
 
           {/* Formula 3: Diurnal Irradiance Arc */}
-          <div className="p-4 rounded-xl bg-[#0B0E13] border border-[#1E2532] space-y-2">
-            <span className="text-[#2ECC71] font-bold text-[11px] uppercase">
+          <div className="p-4 rounded-xl bg-[#07090C] border border-[#18202A] space-y-2">
+            <span className="text-[#10B981] font-bold text-[11px] uppercase">
               Eq. 3 — Diurnal Solar Irradiance Curve
             </span>
-            <div className="p-2.5 rounded bg-[#131922] border border-[#253040] text-amber-300 overflow-x-auto">
+            <div className="p-2.5 rounded bg-[#0A0D12] border border-[#1C2634] text-[#10B981] overflow-x-auto">
               I(t) = max(0, sin(π · (t - 5.75) / 13.5))^1.25
             </div>
             <p className="text-slate-400 text-[11px] leading-relaxed">
@@ -250,9 +250,9 @@ export const MethodologyView: React.FC = () => {
           </div>
 
           {/* Column 2: Baseline Algorithmic Models */}
-          <div className="p-4 rounded-xl bg-[#0B0E13] border border-[#1E2532] space-y-3 flex flex-col justify-between">
+          <div className="p-4 rounded-xl bg-[#07090C] border border-[#18202A] space-y-3 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 font-bold text-cyan-400 font-mono text-[11px] uppercase">
+              <div className="flex items-center gap-2 font-bold text-[#10B981] font-mono text-[11px] uppercase">
                 <Activity className="w-4 h-4" />
                 <span>Algorithmic Optimization</span>
               </div>
@@ -261,28 +261,28 @@ export const MethodologyView: React.FC = () => {
               </p>
               <ul className="mt-2.5 space-y-1.5 text-slate-300 text-[11px]">
                 <li className="flex items-start gap-1.5">
-                  <span className="text-cyan-400 font-mono">•</span>
+                  <span className="text-[#10B981] font-mono">•</span>
                   <span><strong>Demand Forecasting:</strong> Moving-average statistical time-series with temperature derating.</span>
                 </li>
                 <li className="flex items-start gap-1.5">
-                  <span className="text-cyan-400 font-mono">•</span>
+                  <span className="text-[#10B981] font-mono">•</span>
                   <span><strong>Smart Scheduling:</strong> Constraint-aware greedy heuristic shifting loads to low-tariff solar hours.</span>
                 </li>
                 <li className="flex items-start gap-1.5">
-                  <span className="text-cyan-400 font-mono">•</span>
+                  <span className="text-[#10B981] font-mono">•</span>
                   <span><strong>Peak Shaving:</strong> Prevents coincident high draws (e.g. EV + HVAC) exceeding feeder threshold.</span>
                 </li>
               </ul>
             </div>
-            <div className="pt-2 border-t border-[#1C2330] text-[10px] font-mono text-cyan-300">
+            <div className="pt-2 border-t border-[#18202A] text-[10px] font-mono text-[#10B981]">
               Status: Algorithmic Simulation (Rule-Based)
             </div>
           </div>
 
           {/* Column 3: Simulated Synthetic Datasets */}
-          <div className="p-4 rounded-xl bg-[#0B0E13] border border-[#1E2532] space-y-3 flex flex-col justify-between">
+          <div className="p-4 rounded-xl bg-[#07090C] border border-[#18202A] space-y-3 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 font-bold text-amber-400 font-mono text-[11px] uppercase">
+              <div className="flex items-center gap-2 font-bold text-[#FB7185] font-mono text-[11px] uppercase">
                 <HardDrive className="w-4 h-4" />
                 <span>Synthetic Datasets</span>
               </div>
@@ -291,20 +291,20 @@ export const MethodologyView: React.FC = () => {
               </p>
               <ul className="mt-2.5 space-y-1.5 text-slate-300 text-[11px]">
                 <li className="flex items-start gap-1.5">
-                  <span className="text-amber-400 font-mono">•</span>
+                  <span className="text-[#FB7185] font-mono">•</span>
                   <span><strong>Historical Traces:</strong> Synthetic 24h & 7-day residential load profiles calibrated to IEEE test feeders.</span>
                 </li>
                 <li className="flex items-start gap-1.5">
-                  <span className="text-amber-400 font-mono">•</span>
+                  <span className="text-[#FB7185] font-mono">•</span>
                   <span><strong>Tariff Schedules:</strong> Representative 3-tier Time-Of-Use pricing ($0.08, $0.22, $0.38/kWh).</span>
                 </li>
                 <li className="flex items-start gap-1.5">
-                  <span className="text-amber-400 font-mono">•</span>
+                  <span className="text-[#FB7185] font-mono">•</span>
                   <span><strong>No Live Hardware:</strong> Does not connect to live utility meters or physical switchgear.</span>
                 </li>
               </ul>
             </div>
-            <div className="pt-2 border-t border-[#1C2330] text-[10px] font-mono text-amber-300">
+            <div className="pt-2 border-t border-[#18202A] text-[10px] font-mono text-[#FB7185]">
               Status: Simulated Academic Data Only
             </div>
           </div>

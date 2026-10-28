@@ -104,9 +104,9 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#101317] text-slate-100 flex flex-col selection:bg-[#1B5E3F]/30 selection:text-emerald-300">
+    <div className="min-h-screen bg-[#07090C] text-slate-100 flex flex-col selection:bg-[#10B981]/30 selection:text-emerald-300">
       {/* Top Navbar */}
-      <header className="sticky top-0 z-40 h-16 border-b border-[#222731] bg-[#101317]/95 backdrop-blur-md px-4 sm:px-6 flex items-center justify-between gap-4">
+      <header className="sticky top-0 z-40 h-16 border-b border-[#18202A] bg-[#07090C]/95 backdrop-blur-md px-4 sm:px-6 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           {/* Mobile Menu Toggle */}
           <button
@@ -119,13 +119,13 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
           {/* Brand Logo & Name */}
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded bg-[#161B22] border border-[#26303D] flex items-center justify-center relative">
-              <Zap className="w-4 h-4 text-[#2ECC71] fill-[#1B5E3F]/40" />
-              <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-[#E11D48]" />
+            <div className="w-8 h-8 rounded-lg bg-[#0D1117] border border-[#1F2733] flex items-center justify-center relative shadow-sm">
+              <Zap className="w-4 h-4 text-[#10B981] fill-[#10B981]/20" />
+              <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#E11D48] ring-2 ring-[#07090C]" />
             </div>
             <div>
               <span className="text-sm font-bold text-white tracking-tight">
-                LoadPilot <span className="text-[#2ECC71] font-medium">AI</span>
+                LoadPilot <span className="text-[#10B981] font-semibold">AI</span>
               </span>
               <span className="hidden sm:inline text-xs text-slate-400 ml-2 font-mono">
                 · Smart Energy Dashboard
@@ -207,15 +207,15 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
       <div className="flex-1 flex overflow-hidden">
         {/* Desktop Sidebar (Collapsible) */}
         <aside
-          className={`hidden md:flex flex-col border-r border-[#222731] bg-[#0E1115] transition-all duration-300 select-none ${
+          className={`hidden md:flex flex-col border-r border-[#18202A] bg-[#0A0D12] transition-all duration-300 select-none ${
             sidebarCollapsed ? 'w-16' : 'w-64'
           }`}
         >
           {/* Sidebar Collapse Toggle Button */}
-          <div className="p-3 border-b border-[#20252F] flex justify-end">
+          <div className="p-3 border-b border-[#18202A] flex justify-end">
             <button
               onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-              className="p-1.5 rounded text-slate-400 hover:text-white hover:bg-[#1A1F27] transition-colors"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#161D26] transition-colors"
               title={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
             >
               {sidebarCollapsed ? (
@@ -241,10 +241,10 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
                     }
                     setActiveTab(item.id);
                   }}
-                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium transition-all ${
+                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all ${
                     isActive
-                      ? 'bg-[#1B5E3F] text-white shadow-md shadow-emerald-950/20'
-                      : 'text-slate-300 hover:text-white hover:bg-[#161B23]'
+                      ? 'bg-[#059669] text-white shadow-lg shadow-emerald-950/40'
+                      : 'text-slate-300 hover:text-white hover:bg-[#121720]'
                   }`}
                   title={item.label}
                 >
@@ -255,10 +255,10 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
                       {item.badge && (
                         <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded border ${
                           item.id === 'scenarios'
-                            ? 'bg-[#16291F] text-[#2ECC71] border-[#2D936C]/40 font-bold'
+                            ? 'bg-[#0D2419] text-[#10B981] border-[#10B981]/30 font-bold'
                             : item.id === 'builder' 
-                            ? 'bg-[#16291F] text-[#2ECC71] border-[#2D936C]/40 font-bold' 
-                            : 'bg-[#101317] text-slate-400 border-[#20252F]'
+                            ? 'bg-[#0D2419] text-[#10B981] border-[#10B981]/30 font-bold' 
+                            : 'bg-[#0D1117] text-slate-400 border-[#1F2733]'
                         }`}>
                           {item.badge}
                         </span>
@@ -272,9 +272,9 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
           {/* Sidebar Bottom Context Strip */}
           {!sidebarCollapsed && (
-            <div className="p-3.5 border-t border-[#20252F] bg-[#0B0E11] text-[11px] text-slate-400 space-y-1">
+            <div className="p-3.5 border-t border-[#18202A] bg-[#07090C] text-[11px] text-slate-400 space-y-1">
               <div className="font-semibold text-slate-300 flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#2ECC71]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#10B981]" />
                 <span>LoadPilot AI Suite</span>
               </div>
               <p className="text-[10px] text-slate-400 leading-tight">
@@ -353,7 +353,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
         )}
 
         {/* Main Content Area */}
-        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-[#101317]">
+        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-[#07090C]">
           <div className="max-w-7xl mx-auto">
             {renderActiveView()}
           </div>

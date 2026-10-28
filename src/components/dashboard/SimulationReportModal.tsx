@@ -77,13 +77,13 @@ export const SimulationReportModal: React.FC<SimulationReportModalProps> = ({ is
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
           
           {/* Explicit Research Disclaimer Banner */}
-          <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3.5 sm:p-4 text-xs text-amber-200/90 flex items-start gap-3">
-            <ShieldAlert className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+          <div className="rounded-xl border border-[#BE123C]/50 bg-[#3B0C15]/60 p-3.5 sm:p-4 text-xs text-rose-200/90 flex items-start gap-3">
+            <ShieldAlert className="w-5 h-5 text-[#FB7185] shrink-0 mt-0.5" />
             <div className="space-y-1">
-              <div className="font-bold text-amber-300 uppercase tracking-wide font-mono text-[11px]">
+              <div className="font-bold text-[#FB7185] uppercase tracking-wide font-mono text-[11px]">
                 Engineering Disclaimer — Simulated Data Only
               </div>
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-slate-300">
                 This report represents mathematical simulations executed by the LoadPilot AI electrical energy balance model for college engineering evaluation. Values are calculated using steady-state Kirchhoff power dispatch and idealized battery cell models. All financial values are theoretical estimates based on configured tariff inputs.
               </p>
             </div>
@@ -158,7 +158,7 @@ export const SimulationReportModal: React.FC<SimulationReportModalProps> = ({ is
                   </tr>
                   <tr>
                     <td className="p-3 font-medium text-white flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-cyan-400" />
+                      <span className="w-2 h-2 rounded-full bg-[#10B981]" />
                       Battery Storage (BESS)
                     </td>
                     <td className="p-3">
@@ -168,14 +168,14 @@ export const SimulationReportModal: React.FC<SimulationReportModalProps> = ({ is
                         ? `Charging ${Math.abs(metrics.batteryPowerFlowW)} W` 
                         : 'Idle'}
                     </td>
-                    <td className="p-3 font-bold text-cyan-300">
+                    <td className="p-3 font-bold text-[#10B981]">
                       Discharged: {accumulatedEnergy.batteryDischargedKWh.toFixed(3)} kWh
                     </td>
                     <td className="p-3 text-slate-400">SoC: {state.battery.stateOfChargePct.toFixed(1)}%</td>
                   </tr>
                   <tr>
                     <td className="p-3 font-medium text-white flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-amber-400" />
+                      <span className="w-2 h-2 rounded-full bg-[#E11D48]" />
                       Utility Grid Net Flow
                     </td>
                     <td className="p-3 font-medium">
@@ -185,7 +185,7 @@ export const SimulationReportModal: React.FC<SimulationReportModalProps> = ({ is
                         ? `Exporting ${metrics.gridExportW} W` 
                         : 'Balanced'}
                     </td>
-                    <td className="p-3 font-bold text-amber-300">
+                    <td className="p-3 font-bold text-[#FB7185]">
                       Import: {accumulatedEnergy.gridImportedKWh.toFixed(3)} kWh / Export: {accumulatedEnergy.gridExportedKWh.toFixed(3)} kWh
                     </td>
                     <td className="p-3 text-slate-400">{state.grid.isConnected ? 'Synchronized' : 'Islanded'}</td>
@@ -198,7 +198,7 @@ export const SimulationReportModal: React.FC<SimulationReportModalProps> = ({ is
           {/* Section 3: Tariff & Cost Estimates */}
           <div className="space-y-3">
             <h3 className="text-xs font-bold text-slate-200 uppercase tracking-wider font-mono flex items-center gap-2">
-              <DollarSign className="w-4 h-4 text-amber-400" />
+              <DollarSign className="w-4 h-4 text-[#10B981]" />
               <span>3. Tariff Breakdown & Estimated Financial Model</span>
             </h3>
 
@@ -209,11 +209,11 @@ export const SimulationReportModal: React.FC<SimulationReportModalProps> = ({ is
               </div>
               <div>
                 <span className="text-slate-400 text-[11px]">Solar Net Feed-In Tariff:</span>
-                <div className="text-sm font-bold text-[#2ECC71] mt-0.5">{tariff.currencySymbol}{tariff.exportFeedInRatePerKWh.toFixed(2)} / kWh</div>
+                <div className="text-sm font-bold text-[#10B981] mt-0.5">{tariff.currencySymbol}{tariff.exportFeedInRatePerKWh.toFixed(2)} / kWh</div>
               </div>
               <div>
                 <span className="text-slate-400 text-[11px]">Net Cumulative Bill (Estimate):</span>
-                <div className={`text-base font-bold mt-0.5 ${estimatedNetEnergyCostUSD > 0 ? 'text-amber-400' : 'text-[#2ECC71]'}`}>
+                <div className={`text-base font-bold mt-0.5 ${estimatedNetEnergyCostUSD > 0 ? 'text-[#FB7185]' : 'text-[#10B981]'}`}>
                   {tariff.currencySymbol}{estimatedNetEnergyCostUSD.toFixed(2)}
                 </div>
               </div>

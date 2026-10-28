@@ -45,14 +45,14 @@ export const SimulationControlsBar: React.FC<SimulationControlsBarProps> = ({ on
 
   // Icon for time of day
   const getTimeIcon = () => {
-    if (simulatedHour >= 5.5 && simulatedHour < 9) return <Sunrise className="w-4 h-4 text-amber-400" />;
-    if (simulatedHour >= 9 && simulatedHour < 17) return <Sun className="w-4 h-4 text-amber-300" />;
-    if (simulatedHour >= 17 && simulatedHour < 20) return <Sunset className="w-4 h-4 text-orange-400" />;
-    return <Moon className="w-4 h-4 text-indigo-300" />;
+    if (simulatedHour >= 5.5 && simulatedHour < 9) return <Sunrise className="w-4 h-4 text-emerald-400" />;
+    if (simulatedHour >= 9 && simulatedHour < 17) return <Sun className="w-4 h-4 text-[#10B981]" />;
+    if (simulatedHour >= 17 && simulatedHour < 20) return <Sunset className="w-4 h-4 text-[#E11D48]" />;
+    return <Moon className="w-4 h-4 text-slate-400" />;
   };
 
   return (
-    <div className="rounded-xl border border-[#222731] bg-[#12161D] p-3.5 sm:p-4 shadow-lg space-y-3.5">
+    <div className="rounded-2xl border border-[#18202A] bg-[#0D1117] p-3.5 sm:p-4 shadow-xl space-y-3.5">
       {/* Top Row: Clock, Play/Pause, Speeds, Reset, and Simulated Badge */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         {/* Left: Playback controls and Clock */}
@@ -125,8 +125,8 @@ export const SimulationControlsBar: React.FC<SimulationControlsBarProps> = ({ on
         {/* Right: Simulated Badge & Report Modal Trigger */}
         <div className="flex items-center gap-2 sm:gap-2.5">
           {/* Prominent Simulated Data Warning Badge */}
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#181D26] border border-[#2C3444] text-[10px] font-mono font-medium text-amber-300">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#0D2419] border border-[#10B981]/40 text-[10px] font-mono font-medium text-[#10B981]">
+            <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
             <span>SIMULATED DATA</span>
           </div>
 
@@ -134,9 +134,9 @@ export const SimulationControlsBar: React.FC<SimulationControlsBarProps> = ({ on
           {onOpenReportModal && (
             <button
               onClick={onOpenReportModal}
-              className="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-200 hover:text-white bg-[#1A1F27] hover:bg-[#232936] border border-[#2A313E] transition-colors flex items-center gap-1.5 shadow-sm"
+              className="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-200 hover:text-white bg-[#141B24] hover:bg-[#1A2432] border border-[#222E3E] transition-colors flex items-center gap-1.5 shadow-sm"
             >
-              <FileText className="w-3.5 h-3.5 text-[#2ECC71]" />
+              <FileText className="w-3.5 h-3.5 text-[#10B981]" />
               <span className="hidden sm:inline">Export Report</span>
             </button>
           )}
@@ -162,22 +162,22 @@ export const SimulationControlsBar: React.FC<SimulationControlsBarProps> = ({ on
             step={0.1}
             value={simulatedHour}
             onChange={(e) => setSimulatedHour(parseFloat(e.target.value))}
-            className="w-full h-2 bg-[#1A1F28] rounded-lg appearance-none cursor-pointer accent-[#2ECC71]"
+            className="w-full h-2 bg-[#141B24] rounded-lg appearance-none cursor-pointer accent-[#10B981]"
           />
         </div>
         <div className="flex justify-between text-[9px] text-slate-500 font-mono px-0.5 mt-1">
           <span>00:00 (Midnight)</span>
           <span>06:00 (Sunrise)</span>
-          <span className="text-amber-400/80 font-bold">12:30 (Solar Peak)</span>
+          <span className="text-[#10B981] font-bold">12:30 (Solar Peak)</span>
           <span>19:00 (Sunset)</span>
           <span>24:00 (Night)</span>
         </div>
       </div>
 
       {/* Bottom Telemetry Strip: Cumulative Energy Accumulators */}
-      <div className="pt-2 border-t border-[#1C212B] grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-xs font-mono">
+      <div className="pt-2 border-t border-[#18202A] grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-xs font-mono">
         {/* Consumed */}
-        <div className="p-2 rounded-lg bg-[#0E1116] border border-[#1E232E] flex flex-col">
+        <div className="p-2 rounded-lg bg-[#07090C] border border-[#18202A] flex flex-col">
           <span className="text-[10px] text-slate-400">Total Consumed:</span>
           <span className="text-sm font-bold text-white mt-0.5">
             {accumulatedEnergy.totalLoadKWh.toFixed(3)} <span className="text-[10px] font-normal text-slate-400">kWh</span>
@@ -185,15 +185,15 @@ export const SimulationControlsBar: React.FC<SimulationControlsBarProps> = ({ on
         </div>
 
         {/* Solar Generated */}
-        <div className="p-2 rounded-lg bg-[#0E1116] border border-[#1E232E] flex flex-col">
+        <div className="p-2 rounded-lg bg-[#07090C] border border-[#18202A] flex flex-col">
           <span className="text-[10px] text-slate-400">Solar Harvest:</span>
-          <span className="text-sm font-bold text-[#2ECC71] mt-0.5">
+          <span className="text-sm font-bold text-[#10B981] mt-0.5">
             {accumulatedEnergy.solarGeneratedKWh.toFixed(3)} <span className="text-[10px] font-normal text-slate-400">kWh</span>
           </span>
         </div>
 
         {/* Net Grid Import/Export */}
-        <div className="p-2 rounded-lg bg-[#0E1116] border border-[#1E232E] flex flex-col">
+        <div className="p-2 rounded-lg bg-[#07090C] border border-[#18202A] flex flex-col">
           <span className="text-[10px] text-slate-400">Grid Import / Export:</span>
           <span className="text-sm font-bold text-slate-200 mt-0.5">
             {accumulatedEnergy.gridImportedKWh.toFixed(2)} <span className="text-[10px] text-slate-500">/</span> {accumulatedEnergy.gridExportedKWh.toFixed(2)} <span className="text-[10px] font-normal text-slate-400">kWh</span>
@@ -201,12 +201,12 @@ export const SimulationControlsBar: React.FC<SimulationControlsBarProps> = ({ on
         </div>
 
         {/* Estimated Cost Delta */}
-        <div className="p-2 rounded-lg bg-[#0E1116] border border-[#1E232E] flex flex-col">
+        <div className="p-2 rounded-lg bg-[#07090C] border border-[#18202A] flex flex-col">
           <span className="text-[10px] text-slate-400 flex items-center justify-between">
             <span>Net Bill Est.:</span>
             <span className="text-[9px] text-slate-500">@{tariff.importRatePerKWh}/kWh</span>
           </span>
-          <span className={`text-sm font-bold mt-0.5 ${estimatedNetEnergyCostUSD > 0 ? 'text-amber-400' : 'text-[#2ECC71]'}`}>
+          <span className={`text-sm font-bold mt-0.5 ${estimatedNetEnergyCostUSD > 0 ? 'text-[#FB7185]' : 'text-[#10B981]'}`}>
             {tariff.currencySymbol}{estimatedNetEnergyCostUSD.toFixed(2)}
           </span>
         </div>

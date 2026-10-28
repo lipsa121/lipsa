@@ -8,8 +8,8 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #101317;
-    color: #F1F5F9;
+    background-color: #07090C;
+    color: #F8FAFC;
     overflow-x: hidden;
   }
 
@@ -22,23 +22,43 @@
 .bg-grid-pattern {
   background-size: 36px 36px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
 .bg-radial-forest {
-  background: radial-gradient(circle at 50% 0%, rgba(27, 94, 63, 0.12) 0%, transparent 65%);
+  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.14) 0%, transparent 65%);
 }
 
 .bg-radial-crimson {
-  background: radial-gradient(circle at 50% 100%, rgba(190, 18, 60, 0.08) 0%, transparent 65%);
+  background: radial-gradient(circle at 50% 100%, rgba(225, 29, 72, 0.12) 0%, transparent 65%);
 }
 
-/* Glow effects */
+/* Luxury Glow effects for Black, Green & Crimson theme */
 .glow-forest {
-  box-shadow: 0 0 25px rgba(27, 94, 63, 0.25);
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
 }
 
 .glow-crimson {
-  box-shadow: 0 0 25px rgba(190, 18, 60, 0.22);
+  box-shadow: 0 0 25px rgba(225, 29, 72, 0.28);
+}
+
+.glow-emerald-subtle {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.12);
+}
+
+/* Custom scrollbar for deep dark charcoal aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07090C;
+}
+::-webkit-scrollbar-thumb {
+  background: #18202A;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #253344;
 }

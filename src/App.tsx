@@ -88,7 +88,7 @@ export default function App() {
 
   return (
     <EnergySimulationProvider>
-      <div className="min-h-screen bg-[#101317] text-slate-100 selection:bg-[#1B5E3F]/30 selection:text-emerald-300">
+      <div className="min-h-screen bg-[#07090C] text-slate-100 selection:bg-[#10B981]/30 selection:text-emerald-300">
         {currentRoute === 'builder' ? (
           /* ============================================================
              PHASE 3: BUILD YOUR SMART HOME (INTERACTIVE SIMULATOR)

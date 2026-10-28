@@ -274,10 +274,10 @@ export const SchedulingView: React.FC = () => {
           <div className="mt-2 flex items-center gap-2">
             <span className={`text-sm font-bold font-mono px-2 py-0.5 rounded border ${
               comparison.solverStatus === 'optimal'
-                ? 'bg-[#16291F] text-[#2ECC71] border-[#2D936C]/40'
+                ? 'bg-[#0D2419] text-[#10B981] border-[#10B981]/40'
                 : comparison.solverStatus === 'feasible_with_warnings'
-                ? 'bg-amber-950/40 text-amber-300 border-amber-600/40'
-                : 'bg-rose-950/40 text-[#FB7185] border-rose-600/40'
+                ? 'bg-[#2D0D14] text-[#FDA4AF] border-[#BE123C]/40'
+                : 'bg-[#3B0C15] text-[#FB7185] border-[#BE123C]/60'
             }`}>
               {comparison.solverStatus.toUpperCase().replace(/_/g, ' ')}
             </span>
@@ -304,15 +304,15 @@ export const SchedulingView: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3 text-xs font-mono">
             <div className="flex items-center gap-1.5">
               <span className="w-3 h-0.5 bg-[#E11D48]" />
-              <span className="text-[#FB7185]">Unmanaged (Baseline)</span>
+              <span className="text-[#FB7185] font-semibold">Unmanaged Peak</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="w-3 h-0.5 bg-[#2ECC71]" />
-              <span className="text-[#2ECC71]">Scheduled (Optimized)</span>
+              <span className="w-3 h-0.5 bg-[#10B981]" />
+              <span className="text-[#10B981] font-semibold">Scheduled Load</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="w-3 h-0.5 bg-amber-400" />
-              <span className="text-amber-300">Solar Gen</span>
+              <span className="w-3 h-0.5 bg-[#34D399] stroke-dasharray" />
+              <span className="text-[#34D399]">Solar Gen</span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-3 h-0.5 bg-slate-500 stroke-dasharray" />
@@ -365,11 +365,11 @@ export const SchedulingView: React.FC = () => {
               strokeDasharray="6 3" 
             />
 
-            {/* Solar Generation Trace */}
+            {/* Solar Generation Trace (Emerald Green) */}
             <path 
               d={solarPath} 
               fill="none" 
-              stroke="#F59E0B" 
+              stroke="#10B981" 
               strokeWidth="1.5" 
               strokeDasharray="4 2" 
             />
@@ -469,7 +469,7 @@ export const SchedulingView: React.FC = () => {
                 <span>Unmanaged Demand:</span>
                 <span>{comparison.hourlyProfiles[hoveredHour].unmanagedDemandW} W</span>
               </div>
-              <div className="flex justify-between gap-4 text-amber-300">
+              <div className="flex justify-between gap-4 text-[#10B981]">
                 <span>Solar Generation:</span>
                 <span>{comparison.hourlyProfiles[hoveredHour].solarGenerationW} W</span>
               </div>
@@ -569,10 +569,10 @@ export const SchedulingView: React.FC = () => {
 
                   <span className={`text-[10px] font-mono px-2 py-0.5 rounded border ${
                     task.priority === 'Critical' || task.priority === 'High'
-                      ? 'bg-[#BE123C]/20 text-[#FB7185] border-[#BE123C]/40'
+                      ? 'bg-[#3B0C15] text-[#FB7185] border-[#BE123C]/40 font-semibold'
                       : task.priority === 'Medium'
-                      ? 'bg-amber-950/30 text-amber-300 border-amber-600/30'
-                      : 'bg-[#16291F] text-[#2ECC71] border-[#2D936C]/40'
+                      ? 'bg-[#0D2419] text-[#10B981] border-[#10B981]/30 font-medium'
+                      : 'bg-[#141B24] text-slate-300 border-[#222E3E]'
                   }`}>
                     {task.priority} Priority
                   </span>
